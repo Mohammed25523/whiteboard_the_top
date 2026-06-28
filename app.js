@@ -1766,6 +1766,14 @@ document.getElementById('fullscreenBtn')?.addEventListener('click', () => {
   }
 });
 
+document.addEventListener('fullscreenchange', () => {
+  const whiteboardEl = document.getElementById('whiteboard');
+  if (document.fullscreenElement === whiteboardEl) {
+    whiteboardEl.scrollTop = 0;
+  }
+  setTimeout(resize, 120);
+});
+
 }
 
 
