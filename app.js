@@ -1421,6 +1421,7 @@ if (state.ruler && state.ruler.visible) {
 
   // Pointer events for drawing/panning
   canvas.addEventListener('pointerdown', (evt) => {
+    evt.preventDefault();
     canvas.setPointerCapture(evt.pointerId);
     const pt = getCanvasPoint(evt);
 
@@ -1500,6 +1501,9 @@ if (state.ruler && state.ruler.visible) {
   });
 
   canvas.addEventListener('pointermove', (evt) => {
+    if (state.drawing || state.isPanning || state.dragAttachment || state.tool !== 'select') {
+      evt.preventDefault();
+    }
     const pt = getCanvasPoint(evt);
     if (state.dragAttachment) {
   const world = screenToWorld(pt.x, pt.y);
@@ -1588,7 +1592,12 @@ if (state.ruler && state.ruler.visible) {
   }
 
   canvas.addEventListener('pointerup', handlePointerUp);
-  canvas.addEventListener('pointercancel', handlePointerUp);
+  canvas.addEventListener('pointercancel', (evt) => {
+    if (state.drawing || state.isPanning || state.dragAttachment) {
+      evt.preventDefault();
+    }
+    handlePointerUp();
+  });
   const addFileBtn = document.getElementById('addFileBtn');
 const boardFileInput = document.getElementById('boardFileInput');
 
