@@ -1598,6 +1598,15 @@ if (state.ruler && state.ruler.visible) {
     }
     handlePointerUp();
   });
+
+  ['touchstart', 'touchmove', 'touchend', 'touchcancel'].forEach((eventName) => {
+    canvas.addEventListener(eventName, (evt) => {
+      if (state.tool !== 'select' || state.drawing || state.isPanning || state.dragAttachment) {
+        evt.preventDefault();
+      }
+    }, { passive: false });
+  });
+
   const addFileBtn = document.getElementById('addFileBtn');
 const boardFileInput = document.getElementById('boardFileInput');
 
