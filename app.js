@@ -83,7 +83,14 @@ if (canvas && frame) {
     down: document.getElementById('movePageDownBtn')
   };
 
-  state.pages = [createPage()];
+  const isSmallScreen = window.matchMedia && window.matchMedia('(max-width: 700px)').matches;
+  state.pages = [createPage({
+    view: {
+      zoom: isSmallScreen ? 0.82 : 1,
+      panX: isSmallScreen ? 18 : 0,
+      panY: isSmallScreen ? 18 : 0
+    }
+  })];
   bindActivePage(0);
 
   function createPage(seed = {}) {
