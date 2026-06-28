@@ -741,3 +741,245 @@ body{
   .hero-title{font-size: 38px}
 }
 
+@media (max-width: 700px){
+  body{
+    background-attachment: fixed;
+  }
+
+  .topbar{
+    position:relative;
+    align-items:flex-start;
+    flex-direction:column;
+    gap:12px;
+    padding:12px;
+  }
+
+  .brand{
+    width:100%;
+    gap:10px;
+  }
+
+  .brand-logo{
+    width:44px;
+    height:44px;
+    flex:0 0 auto;
+  }
+
+  .brand-title{
+    font-size:15px;
+    line-height:1.35;
+  }
+
+  .brand-sub{
+    font-size:12px;
+  }
+
+  .nav{
+    width:100%;
+    gap:8px;
+    overflow-x:auto;
+    padding-bottom:4px;
+    scrollbar-width:none;
+  }
+
+  .nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  .nav-link,
+  .nav .primary-btn{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+
+  .nav-link{
+    padding:9px 10px;
+    border-radius:12px;
+    border:1px solid var(--section-card-border);
+    background:var(--chip-bg);
+    font-size:13px;
+  }
+
+  .nav .primary-btn{
+    padding:10px 12px;
+    border-radius:12px;
+  }
+
+  .icon-btn{
+    width:38px;
+    height:38px;
+    border-radius:12px;
+    flex:0 0 auto;
+  }
+
+  .hero{
+    padding:28px 12px 24px;
+  }
+
+  .hero-grid{
+    gap:20px;
+  }
+
+  .hero-title{
+    font-size:30px;
+  }
+
+  .hero-desc,
+  .section-sub{
+    font-size:14px;
+    line-height:1.8;
+  }
+
+  .hero-actions .big{
+    width:100%;
+  }
+
+  .teacher-card,
+  .panel-foot,
+  .footer-inner{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .glass-panel{
+    min-height:360px;
+    border-radius:18px;
+  }
+
+  .panel-foot{
+    gap:10px;
+  }
+
+  .section{
+    padding:26px 12px;
+  }
+
+  .section-head h2{
+    font-size:24px;
+  }
+
+  .card{
+    padding:18px;
+    border-radius:16px;
+  }
+
+  .whiteboard{
+    padding:28px 8px 36px;
+  }
+
+  .wb-shell{
+    gap:10px;
+  }
+
+  .left-sidebar,
+  .right-sidebar,
+  .canvas-area{
+    border-radius:16px;
+  }
+
+  .sidebar-head{
+    margin-bottom:0;
+  }
+
+  .panel-body{
+    position:relative;
+    top:auto;
+    max-height:360px;
+    margin-top:10px;
+    border-radius:16px;
+  }
+
+  .top-toolbar,
+  .page-toolbar{
+    padding:10px;
+    gap:10px;
+  }
+
+  .tool-group,
+  .page-controls{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:8px;
+  }
+
+  .tool-group.right{
+    grid-template-columns:1fr;
+  }
+
+  .tool-btn{
+    min-height:42px;
+    padding:9px 10px;
+    border-radius:12px;
+    font-size:13px;
+  }
+
+  .page-status{
+    width:100%;
+    text-align:center;
+  }
+
+  .canvas-frame{
+    height:68vh;
+    min-height:420px;
+    border-radius:0 0 16px 16px;
+  }
+
+  .hud{
+    left:8px;
+    top:8px;
+    gap:6px;
+    flex-wrap:wrap;
+    max-width:calc(100% - 16px);
+  }
+
+  .hud-item{
+    padding:7px 8px;
+    font-size:11px;
+  }
+
+  .footer{
+    padding:26px 12px 34px;
+  }
+
+  .footer-links{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-links a{
+    text-align:center;
+  }
+}
+
+@media (max-width: 480px){
+  .hero-title{
+    font-size:26px;
+  }
+
+  .pill,
+  .pill-item{
+    font-size:13px;
+  }
+
+  .tool-group,
+  .page-controls{
+    grid-template-columns:1fr;
+  }
+
+  .canvas-frame{
+    height:72vh;
+    min-height:390px;
+  }
+
+  .doc-attachment{
+    width:680px;
+    padding:24px;
+  }
+
+  .footer-links{
+    grid-template-columns:1fr;
+  }
+}
+
