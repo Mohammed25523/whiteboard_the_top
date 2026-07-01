@@ -1,5 +1,5 @@
 /* Minimal front-end bootstrap for the landing page + initial canvas scaffolding.
-   Next iterations will implement full infinite whiteboard features.
+   Next iterations will implement full infinite whiteboard features
 */
 
 const yearEl = document.getElementById('year');
